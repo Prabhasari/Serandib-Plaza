@@ -11,6 +11,8 @@ import shoppingcartRoutes from './routes/shoppingcartRoute.js'
 import LostAndFoundRoutes from './routes/LostAndFoundRoute.js'
 import eventRoutes from './routes/eventRoute.js'
 //import fileUpload from 'express-fileupload';
+import helmet from "helmet";
+
 
 import cors from "cors";
 
@@ -30,6 +32,7 @@ const app = express();
 app.use(cors())
 app.use(express.json())
 app.use(morgan('dev'))
+app.use(helmet());
 
 //routes
 app.use("/api/v1/userauth",AuthRoutes)
